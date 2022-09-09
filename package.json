@@ -1,0 +1,24 @@
+{
+	"name": "beckn-poc",
+	"version": "1.0.0",
+	"description": "Proof Of Concept BAP & BPP For Beckn Integration In Elevate",
+	"main": "app.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"bpp": "nodemon bpp.js",
+		"bap": "nodemon bap.js"
+	},
+	"keywords": [
+		"beckn",
+		"bap",
+		"bpp",
+		"elevate"
+	],
+	"author": "Joffin Joy",
+	"license": "ISC",
+	"dependencies": {
+		"dotenv": "^16.0.2",
+		"express": "^4.18.1",
+		"nodemon": "^2.0.19"
+	}
+}

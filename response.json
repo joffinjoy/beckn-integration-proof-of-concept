@@ -1,0 +1,9 @@
+{
+	"success_ack": {
+		"message": {
+			"ack": {
+				"status": "ACK"
+			}
+		}
+	}
+}
