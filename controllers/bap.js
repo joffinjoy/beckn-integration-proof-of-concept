@@ -1,33 +1,21 @@
 const { sendRequest } = require('../utils/axios');
 const responses = require('../response.json');
-
-const searchProcessor = (searchTerm) => {};
+const { requestBodyGenerator } = require('../helpers/requestBodyGenerator');
 
 exports.selectAPI = async (req, res) => {
-	console.log(req.query.choice);
+	let requestSent = false;
 	switch (req.query.choice) {
 		case '1':
-			await sendRequest(
-				{
-					context: {
-						domain: process.env.DOMAIN,
-						country: process.env.COUNTRY,
-						city: process.env.CITY,
-						action: 'search',
-					},
-					message: {
-						intent: {
-							descriptor: {
-								name: req.query.keyword,
-							},
-						},
-					},
-				},
+			requestSent = await sendRequest(
+				requestBodyGenerator('bg_search', { keyword: req.query.keyword }),
 				process.env.BECKN_BG_URI + '/search'
 			);
+			break;
+		case '2':
 			break;
 		default:
 			return res.send('Invalid Choice');
 	}
-	res.send(responses.success_ack);
+	if (requestSent) res.send(responses.success_ack);
+	else res.send(responses.error);
 };

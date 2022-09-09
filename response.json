@@ -5,5 +5,13 @@
 				"status": "ACK"
 			}
 		}
+	},
+	"error": {
+		"error": {
+			"type": "CONTEXT-ERROR",
+			"code": "string",
+			"path": "string",
+			"message": "string"
+		}
 	}
 }

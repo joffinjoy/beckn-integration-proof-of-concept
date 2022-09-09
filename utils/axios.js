@@ -1,12 +1,15 @@
 const axios = require('axios').default;
 
 exports.sendRequest = (body, url) => {
-	axios
-		.post(url, body)
-		.then((response) => {
-			console.log(response);
-		})
-		.catch((error) => {
-			console.log(error);
-		});
+	return new Promise((resolve, reject) => {
+		axios
+			.post(url, body)
+			.then((response) => {
+				resolve(true);
+			})
+			.catch((error) => {
+				console.log(error);
+				reject(false);
+			});
+	});
 };
