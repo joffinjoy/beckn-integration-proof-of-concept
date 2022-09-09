@@ -1,0 +1,33 @@
+{
+	"context": {
+		"domain": "string",
+		"country": "string",
+		"city": "string",
+		"action": "search",
+		"core_version": "string",
+		"bap_id": "string",
+		"bap_uri": "string",
+		"bpp_id": "string",
+		"bpp_uri": "string",
+		"transaction_id": "string",
+		"message_id": "string",
+		"timestamp": "2022-09-09T12:25:00.366Z",
+		"key": "string",
+		"ttl": "string"
+	},
+	"message": {
+		"intent": {
+			"descriptor": {
+				"name": "string",
+				"code": "string",
+				"symbol": "string",
+				"short_desc": "string",
+				"long_desc": "string",
+				"images": ["string"],
+				"audio": "string",
+				"video": "string",
+				"3d_render": "string"
+			}
+		}
+	}
+}
